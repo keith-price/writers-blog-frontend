@@ -11,9 +11,9 @@ const { data } = useSanityQuery(query);
       <ul v-if="data?.length">
         <li v-for="post in data" v-bind:key="data._id">
           <h3>{{ post.title }}</h3>
-          {{ post.content }}
         </li>
       </ul>
+
       <p v-else>No posts to show</p>
       <h2>Fetched Data</h2>
       <div v-if="data">

@@ -12,6 +12,9 @@
     "nuxt": "^3.3.3"
   },
   "dependencies": {
-    "@nuxtjs/sanity": "^1.6.0"
+    "@nuxtjs/sanity": "^1.6.0",
+    "@sanity/client": "^5.4.2",
+    "@sanity/image-url": "^1.0.2",
+    "@types/node": "^18.15.11"
   }
 }
