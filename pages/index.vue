@@ -11,6 +11,13 @@ const { data } = useSanityQuery(query);
       <ul v-if="data?.length">
         <li v-for="post in data" v-bind:key="data._id">
           <h3>{{ post.title }}</h3>
+          <img
+            :src="$urlFor(post.coverImage).size(426).url()"
+            :alt="post.title"
+            height="426"
+            width="426"
+            loading="lazy"
+          />
         </li>
       </ul>
 
