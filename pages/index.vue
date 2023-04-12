@@ -7,6 +7,7 @@ const featureData = fetchFeaturedPosts();
 <template>
   <div>
     <header>Writers' Blog Home</header>
+    <v-btn>Hello Baltimore</v-btn>
     <main>
       <h2>Latest Post</h2>
       <ul v-if="latestData">
@@ -71,4 +72,4 @@ const featureData = fetchFeaturedPosts();
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="scss" scoped></style>
