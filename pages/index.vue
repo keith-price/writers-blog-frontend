@@ -6,16 +6,12 @@ const featureData = fetchFeaturedPosts();
 
 <template>
   <div>
-    <header>Writers' Blog Home</header>
     <main>
-      <h2 class="text-3xl text-slate-800 font-bold underline">Latest Post</h2>
       <ul v-if="latestData">
         <li v-bind:key="latestData._id">
+          <h2 class="text-3xl font-bold">Latest Post</h2>
           <h3>{{ latestData.title }}</h3>
-          <p>{{ latestData.excerpt }}</p>
-          <p>{{ latestData.author }}</p>
-          <p>{{ latestData.category }}</p>
-          <SanityContent :blocks="latestData.content" />
+          <!-- <SanityContent :blocks="latestData.content" /> -->
           <img
             :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
             :alt="latestData.title"
@@ -23,12 +19,14 @@ const featureData = fetchFeaturedPosts();
             width="1280"
             loading="lazy"
           />
+          <p>{{ latestData.excerpt }}</p>
+          <p>{{ latestData.author }}</p>
+          <p>{{ latestData.category }}</p>
         </li>
       </ul>
-
       <p v-else>No Latest posts to show</p>
 
-      <h2>Featured Posts</h2>
+      <!-- <h2>Featured Posts</h2>
       <ul v-if="featureData?.length">
         <li v-for="post in featureData" v-bind:key="featureData._id">
           <h3>{{ post.title }}</h3>
@@ -46,8 +44,7 @@ const featureData = fetchFeaturedPosts();
         </li>
       </ul>
 
-      <p v-else>No featured posts to show</p>
-      <h2>Featured Data</h2>
+      <p v-else>No featured posts to show</p> -->
     </main>
   </div>
 </template>
