@@ -1,6 +1,6 @@
 <script setup>
 const { fetchByCategory } = useUtils();
-const data = fetchByCategory("story");
+const data = fetchByCategory("short story");
 console.log(data);
 </script>
 
@@ -8,7 +8,7 @@ console.log(data);
   <div>
     <header>Writers' Group Stories</header>
     <main>
-      <h2>Stories</h2>
+      <h2>Short Stories</h2>
       <ul v-if="data?.length">
         <li v-for="post in data" v-bind:key="data._id">
           <h3>{{ post.title }}</h3>
@@ -26,7 +26,7 @@ console.log(data);
         </li>
       </ul>
 
-      <p v-else>No stories to show</p>
+      <p v-else>No short stories to show</p>
       <h2>Fetched Data</h2>
       <div v-if="data">
         <pre v-if="data"
