@@ -58,10 +58,6 @@ const categories = [
     icon: ArrowPathIcon,
   },
 ];
-// const callsToAction = [
-//   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-//   { name: "Contact sales", href: "#", icon: PhoneIcon },
-// ];
 
 const mobileMenuOpen = ref(false);
 </script>
@@ -89,6 +85,15 @@ const mobileMenuOpen = ref(false);
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          >Features</a
+        >
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          >Marketplace</a
+        >
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          >Company</a
+        >
         <Popover class="relative">
           <PopoverButton
             class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
@@ -158,16 +163,6 @@ const mobileMenuOpen = ref(false);
             </PopoverPanel>
           </transition>
         </Popover>
-
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          >Features</a
-        >
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          >Marketplace</a
-        >
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          >Company</a
-        >
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
