@@ -8,7 +8,7 @@ const featureData = fetchFeaturedPosts();
   <div>
     <header>Writers' Blog Home</header>
     <main>
-      <h2>Latest Post</h2>
+      <h2 class="text-3xl text-slate-800 font-bold underline">Latest Post</h2>
       <ul v-if="latestData">
         <li v-bind:key="latestData._id">
           <h3>{{ latestData.title }}</h3>
@@ -52,4 +52,4 @@ const featureData = fetchFeaturedPosts();
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="scss" scoped></style>

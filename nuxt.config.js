@@ -2,11 +2,11 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/sanity"],
+  css: ["@/assets/css/main.css"],
+  modules: ["@nuxtjs/sanity", "@nuxtjs/tailwindcss"],
   sanity: {
     projectId: "dxx2zusy",
     dataset: "production",
   },
-  css: ["@/assets/css/styles.css"],
   buildModules: ["@nuxtjs/sanity/module"],
 });
