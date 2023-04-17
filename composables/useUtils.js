@@ -27,7 +27,7 @@ export const useUtils = () => {
   };
 
   const fetchSinglePost = (path) => {
-    const query = groq`*[_type == "post" && slug.current == "${path}"]`;
+    const query = groq`*[_type == "post" && slug.current == "${path}"] [0]`;
     const { data } = useSanityQuery(query);
     return data;
   };

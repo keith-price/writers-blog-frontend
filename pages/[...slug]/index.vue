@@ -1,0 +1,25 @@
+<script setup>
+const route = useRoute();
+const slug = route.params.slug;
+const { fetchSinglePost } = useUtils();
+const singlePost = fetchSinglePost(slug);
+</script>
+
+<template>
+  <p class="text-1xl font-bold mb-2">{{ singlePost.title }}</p>
+  <img
+    :src="$urlFor(singlePost.coverImage).size(1280, 720).url()"
+    :alt="singlePost.title"
+    height="720"
+    width="1280"
+    loading="lazy"
+    class="mb-2"
+  />
+  <SanityContent :blocks="singlePost.content" />
+  <p class="text-sm font-semibold text-justify lg:text-base">
+    {{ singlePost.author }}
+  </p>
+  <p class="text-sm text-justify italic lg:text-base">
+    {{ `# ${singlePost.category}` }}
+  </p>
+</template>

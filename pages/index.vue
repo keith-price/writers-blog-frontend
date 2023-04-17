@@ -1,13 +1,13 @@
 <script setup>
 const { fetchLatestPost, fetchFeaturedPosts } = useUtils();
 const latestData = fetchLatestPost();
+
 const featureData = fetchFeaturedPosts();
 </script>
 
 <template>
   <div>
     <main class="text-slate-900 mb-12">
-      <p>{{ slug }}</p>
       <ul v-if="latestData" class="my-8">
         <li v-bind:key="latestData._id">
           <h1 class="text-3xl font-bold mb-4">Latest Post</h1>
