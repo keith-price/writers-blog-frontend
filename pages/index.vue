@@ -19,7 +19,7 @@ const featureData = fetchFeaturedPosts();
             height="720"
             width="1280"
             loading="lazy"
-            class="mb-4"
+            class="mb-2"
           />
           <p class="text-sm lg:text-base">
             {{ latestData.excerpt }}
