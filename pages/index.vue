@@ -7,29 +7,35 @@ const featureData = fetchFeaturedPosts();
 <template>
   <div>
     <main class="text-slate-900 mb-12">
+      <p>{{ slug }}</p>
       <ul v-if="latestData" class="my-8">
         <li v-bind:key="latestData._id">
           <h1 class="text-3xl font-bold mb-4">Latest Post</h1>
           <!-- <p class="text-1xl font-bold">{{ latestData.title }}</p> -->
           <!-- SanityContent brings in the content body -->
           <!-- <SanityContent :blocks="latestData.content" /> -->
-          <img
-            :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
-            :alt="latestData.title"
-            height="720"
-            width="1280"
-            loading="lazy"
-            class="mb-2"
-          />
-          <p class="text-sm mb-4 text-justify lg:text-base">
-            {{ latestData.excerpt }}
+          <NuxtLink :to="latestData.slug.current">
+            <img
+              :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
+              :alt="latestData.title"
+              height="720"
+              width="1280"
+              loading="lazy"
+              class="mb-2"
+            />
+            <p class="text-sm mb-4 text-justify lg:text-base">
+              {{ latestData.excerpt }}
+            </p>
+          </NuxtLink>
+          <p class="text-sm font-semibold lg:text-base">
+            {{ latestData.author }}
           </p>
-          <p class="text-sm lg:text-base">{{ latestData.author }}</p>
           <p class="text-sm italic lg:text-base">
             {{ `# ${latestData.category}` }}
           </p>
         </li>
       </ul>
+
       <p v-else>No Latest posts to show</p>
 
       <section>
@@ -50,11 +56,14 @@ const featureData = fetchFeaturedPosts();
               <p class="text-sm text-justify mb-2 lg:text-base">
                 {{ post.excerpt }}
               </p>
-              <p class="text-sm text-justify lg:text-base">
+              <p class="text-sm font-semibold text-justify lg:text-base">
                 {{ post.author }}
               </p>
               <p class="text-sm text-justify italic lg:text-base">
                 {{ `# ${latestData.category}` }}
+              </p>
+              <p class="text-sm text-justify mb-2 lg:text-base">
+                {{ post.slug.current }}
               </p>
               <!-- <SanityContent :blocks="post.content" /> -->
             </li>

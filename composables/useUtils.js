@@ -15,13 +15,19 @@ export const useUtils = () => {
 
   // ignores the latest post and returns the 4 next most recent
   const fetchFeaturedPosts = () => {
-    const query = `*[ _type == "post"] | order(date desc) [1...5]`;
+    const query = groq`*[ _type == "post"] | order(date desc) [1...5]`;
     const { data } = useSanityQuery(query);
     return data;
   };
 
   const fetchByCategory = (category) => {
-    const query = `*[_type == "post" && category == "${category}"]`;
+    const query = groq`*[_type == "post" && category == "${category}"]`;
+    const { data } = useSanityQuery(query);
+    return data;
+  };
+
+  const fetchSinglePost = (path) => {
+    const query = groq`*[_type == "post" && slug.current == "${path}"]`;
     const { data } = useSanityQuery(query);
     return data;
   };
@@ -31,5 +37,6 @@ export const useUtils = () => {
     fetchLatestPost,
     fetchFeaturedPosts,
     fetchByCategory,
+    fetchSinglePost,
   };
 };
