@@ -65,7 +65,7 @@ const mobileMenuOpen = ref(false);
 <template>
   <header class="bg-white-50">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
+      class="mx-auto flex max-w-7xl items-center justify-between px-4 py-8 lg:px-8"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
