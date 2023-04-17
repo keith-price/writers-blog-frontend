@@ -21,11 +21,13 @@ const featureData = fetchFeaturedPosts();
             loading="lazy"
             class="mb-2"
           />
-          <p class="text-sm lg:text-base">
+          <p class="text-sm mb-4 text-justify lg:text-base">
             {{ latestData.excerpt }}
           </p>
           <p class="text-sm lg:text-base">{{ latestData.author }}</p>
-          <p class="text-sm lg:text-base">{{ latestData.category }}</p>
+          <p class="text-sm italic lg:text-base">
+            {{ `# ${latestData.category}` }}
+          </p>
         </li>
       </ul>
       <p v-else>No Latest posts to show</p>
@@ -35,7 +37,7 @@ const featureData = fetchFeaturedPosts();
         <div>
           <ul
             v-if="featureData?.length"
-            class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8"
+            class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-8"
           >
             <li v-for="post in featureData" v-bind:key="featureData._id">
               <p class="text-1xl font-bold mb-2">{{ post.title }}</p>
@@ -45,9 +47,15 @@ const featureData = fetchFeaturedPosts();
                 loading="lazy"
                 class="mb-2"
               />
-              <p class="text-sm lg:text-base">{{ post.excerpt }}</p>
-              <p class="text-sm lg:text-base">{{ post.author }}</p>
-              <p class="text-sm lg:text-base">{{ post.category }}</p>
+              <p class="text-sm text-justify mb-2 lg:text-base">
+                {{ post.excerpt }}
+              </p>
+              <p class="text-sm text-justify lg:text-base">
+                {{ post.author }}
+              </p>
+              <p class="text-sm text-justify italic lg:text-base">
+                {{ `# ${latestData.category}` }}
+              </p>
               <!-- <SanityContent :blocks="post.content" /> -->
             </li>
           </ul>
