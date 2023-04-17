@@ -6,6 +6,8 @@ const singlePost = fetchSinglePost(slug);
 </script>
 
 <template>
-  <p>{{ singlePost[0].title }}</p>
-  <p>{{ singlePost[0].excerpt }}</p>
+  <div v-if="singlePost">
+    <p>{{ singlePost[0].title }}</p>
+    <p>{{ singlePost[0].excerpt }}</p>
+  </div>
 </template>
