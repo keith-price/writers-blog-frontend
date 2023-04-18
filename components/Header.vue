@@ -85,14 +85,17 @@ const mobileMenuOpen = ref(false);
         </button>
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold leading-6 text-slate-900"
-          >Features</a
+        <a href="/" class="text-sm font-semibold leading-6 text-slate-900"
+          >Home</a
         >
-        <a href="#" class="text-sm font-semibold leading-6 text-slate-900"
-          >Marketplace</a
+        <a href="/" class="text-sm font-semibold leading-6 text-slate-900"
+          >All Posts</a
         >
-        <a href="#" class="text-sm font-semibold leading-6 text-slate-900"
-          >Company</a
+        <a
+          href="https://writers-group.sanity.studio/desk"
+          target="_blank"
+          class="text-sm font-semibold leading-6 text-slate-900"
+          >Add Content</a
         >
         <Popover class="relative">
           <PopoverButton
@@ -147,11 +150,11 @@ const mobileMenuOpen = ref(false);
           </transition>
         </Popover>
       </PopoverGroup>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="#" class="text-sm font-semibold leading-6 text-slate-900"
           >Log in <span aria-hidden="true">&rarr;</span></a
         >
-      </div>
+      </div> -->
     </nav>
     <Dialog
       as="div"
@@ -180,11 +183,27 @@ const mobileMenuOpen = ref(false);
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-slate-500/10">
             <div class="space-y-2 py-6">
+              <a
+                href="/"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
+                >All Posts</a
+              >
+              <a
+                href="https://writers-group.sanity.studio/desk"
+                target="_blank"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
+                >Add Content</a
+              >
               <Disclosure as="div" class="-mx-3" v-slot="{ open }">
                 <DisclosureButton
-                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-slate-50"
+                  class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-slate-50 text-slate-900"
                 >
-                  Product
+                  Categories
                   <ChevronDownIcon
                     :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']"
                     aria-hidden="true"
@@ -201,29 +220,14 @@ const mobileMenuOpen = ref(false);
                   >
                 </DisclosurePanel>
               </Disclosure>
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
-                >Features</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
-                >Marketplace</a
-              >
-              <a
-                href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
-                >Company</a
-              >
             </div>
-            <div class="py-6">
+            <!-- <div class="py-6">
               <a
                 href="#"
                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
                 >Log in</a
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </DialogPanel>
