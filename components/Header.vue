@@ -88,7 +88,9 @@ const mobileMenuOpen = ref(false);
         <a href="/" class="text-sm font-semibold leading-6 text-slate-900"
           >Home</a
         >
-        <a href="/" class="text-sm font-semibold leading-6 text-slate-900"
+        <a
+          href="/all-posts"
+          class="text-sm font-semibold leading-6 text-slate-900"
           >All Posts</a
         >
         <a
@@ -189,7 +191,7 @@ const mobileMenuOpen = ref(false);
                 >Home</a
               >
               <a
-                href="#"
+                href="/all-posts"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-900 hover:bg-slate-50"
                 >All Posts</a
               >
