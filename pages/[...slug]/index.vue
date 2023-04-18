@@ -1,8 +1,11 @@
 <script setup>
 const route = useRoute();
 const slug = route.params.slug;
-const { fetchSinglePost } = useUtils();
-const singlePost = fetchSinglePost(slug);
+const query = groq`*[_type == "post" && slug.current == "${slug}"] [0]`;
+// fetch the post that matches the slug url
+const { data: singlePost } = await useSanityQuery(query);
+
+console.log(singlePost);
 </script>
 
 <template>

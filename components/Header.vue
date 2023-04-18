@@ -69,7 +69,7 @@ const mobileMenuOpen = ref(false);
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
+        <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Writers' Group</span>
           <img class="h-5 w-auto" src="@/assets/writers-group-2.png" alt="" />
         </a>
