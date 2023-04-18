@@ -1,11 +1,14 @@
 <script setup>
 // fetch the latest post
-const queryLatest = groq`*[_type == "post"] | order(date desc) [0]`;
-const { data: latestData } = await useSanityQuery(queryLatest);
+// const queryLatest = groq`*[_type == "post"] | order(date desc) [0]`;
+// const { data: latestData } = await useSanityQuery(queryLatest);
 
 // fetch the 4 most recent (excluding the latest the latest)
-const queryFeatured = groq`*[ _type == "post"] | order(date desc) [1...5]`;
-const { data: featureData } = await useSanityQuery(queryFeatured);
+// const queryFeatured = groq`*[ _type == "post"] | order(date desc) [1...5]`;
+// const { data: featureData } = await useSanityQuery(queryFeatured);
+const { fetchLatestPost, fetchFeaturedPosts } = useUtils();
+const latestData = fetchLatestPost();
+const featureData = fetchFeaturedPosts();
 </script>
 
 <template>
