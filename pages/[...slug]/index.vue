@@ -7,6 +7,8 @@ const { data: singlePost } = await useSanityQuery(query);
 </script>
 
 <template>
+  <!-- button to navigate back to previous page -->
+  <button @click="$router.back()">BACK</button>
   <p class="text-1xl font-bold mb-2">{{ singlePost.title }}</p>
   <img
     :src="$urlFor(singlePost.coverImage).size(1280, 720).url()"
