@@ -70,14 +70,10 @@ const featureData = fetchFeaturedPosts();
               <p class="text-sm text-justify italic lg:text-base">
                 {{ `# ${latestData.category}` }}
               </p>
-              <p class="text-sm text-justify mb-2 lg:text-base">
-                {{ post.slug.current }}
-              </p>
-              <!-- <SanityContent :blocks="post.content" /> -->
             </li>
           </ul>
 
-          <!-- <p v-else>No featured posts to show</p> -->
+           <p v-else>No featured posts to show</p> 
         </div>
       </section>
     </main>
