@@ -31,10 +31,6 @@ const posts = fetchAllPosts();
           <p class="text-sm text-justify italic lg:text-base">
             {{ `# ${post.category}` }}
           </p>
-          <p class="text-sm text-justify mb-2 lg:text-base">
-            {{ post.slug.current }}
-          </p>
-          <!-- <SanityContent :blocks="post.content" /> -->
         </li>
       </ul>
 

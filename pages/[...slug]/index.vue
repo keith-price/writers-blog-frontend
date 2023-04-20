@@ -9,7 +9,7 @@ const { data: singlePost } = await useSanityQuery(query);
 <template>
   <!-- button to navigate back to previous page -->
   <button @click="$router.back()">BACK</button>
-  <p class="text-1xl font-bold mb-2">{{ singlePost.title }}</p>
+  <p class="text-2xl font-bold mb-2">{{ singlePost.title }}</p>
   <img
     :src="$urlFor(singlePost.coverImage).size(1280, 720).url()"
     :alt="singlePost.title"
@@ -26,3 +26,4 @@ const { data: singlePost } = await useSanityQuery(query);
     {{ `# ${singlePost.category}` }}
   </p>
 </template>
+
