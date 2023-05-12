@@ -27,3 +27,9 @@ const { data: singlePost } = await useSanityQuery(query);
   </p>
 </template>
 
+<style lang="css" scoped>
+p:empty {
+  display: block;
+  height: 1em;
+}
+</style>
