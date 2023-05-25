@@ -1,13 +1,13 @@
 <script setup>
 const { fetchByCategory } = useUtils();
-const data = fetchByCategory("short story");
+const data = fetchByCategory("memoir-non-fiction");
 </script>
 
 <template>
   <div>
-    <header>Writers' Group Short Stories</header>
+    <header>Writers' Group Memoirs and Non-Fiction</header>
     <main>
-      <h2>Short Stories</h2>
+      <h2>Memoirs and Non-Fiction</h2>
       <ul v-if="data?.length">
         <li v-for="post in data" v-bind:key="data._id">
           <h3>{{ post.title }}</h3>
@@ -24,6 +24,8 @@ const data = fetchByCategory("short story");
           />
         </li>
       </ul>
+
+      <p v-else>No memoirs or non-fiction to show</p>
     </main>
   </div>
 </template>

@@ -1,12 +1,11 @@
 <script setup>
 const { fetchByCategory } = useUtils();
 const data = fetchByCategory("poetry");
-console.log(data);
 </script>
 
 <template>
   <div>
-    <header>Writers' Blog Poetry</header>
+    <header>Writers' Group Poetry</header>
     <main>
       <h2>Poetry</h2>
       <ul v-if="data?.length">
@@ -27,16 +26,6 @@ console.log(data);
       </ul>
 
       <p v-else>No poems to show</p>
-      <h2>Fetched Data</h2>
-      <div v-if="data">
-        <pre v-if="data"
-          >{{ JSON.stringify(data, null, 2) }}
-        </pre>
-      </div>
-      <div v-else>
-        <h2>No poetry was fetched!</h2>
-        <p>Data will show up if Sanity is configured correctly</p>
-      </div>
     </main>
   </div>
 </template>

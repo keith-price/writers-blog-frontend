@@ -9,6 +9,7 @@
 const { fetchLatestPost, fetchFeaturedPosts } = useUtils();
 const latestData = fetchLatestPost();
 const featureData = fetchFeaturedPosts();
+console.log(featureData);
 </script>
 
 <template>
@@ -68,12 +69,12 @@ const featureData = fetchFeaturedPosts();
                 {{ post.author }}
               </p>
               <p class="text-sm text-justify italic lg:text-base">
-                {{ `# ${latestData.category}` }}
+                {{ `# ${post.category}` }}
               </p>
             </li>
           </ul>
 
-           <p v-else>No featured posts to show</p> 
+          <p v-else>No featured posts to show</p>
         </div>
       </section>
     </main>
