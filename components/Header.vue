@@ -54,13 +54,13 @@ const categories = [
   {
     name: "Novel Extracts",
     description: "Writers' Group novel extracts",
-    href: "#",
+    href: "novel-extracts",
     icon: ArrowPathIcon,
   },
   {
     name: "Diary",
     description: "Writers' Group Diaries",
-    href: "#",
+    href: "diary",
     icon: ArrowPathIcon,
   },
 ];
