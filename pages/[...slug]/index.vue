@@ -16,7 +16,7 @@ const { data: singlePost } = await useSanityQuery(query);
     height="720"
     width="1280"
     loading="lazy"
-    class="mb-2"
+    class="mb-2 rounded shadow-md"
   />
   <SanityContent :blocks="singlePost.content" />
   <p class="text-sm font-semibold text-justify lg:text-base">

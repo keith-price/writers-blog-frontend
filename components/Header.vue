@@ -19,6 +19,7 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  BookOpenIcon,
 } from "@heroicons/vue/24/outline";
 import {
   ChevronDownIcon,
@@ -29,39 +30,38 @@ import {
 const categories = [
   {
     name: "Short Story",
-    description: "Writers' Group short stories",
     href: "short-stories",
-    icon: ChartPieIcon,
+    icon: BookOpenIcon,
   },
   {
     name: "Poetry",
     description: "Writers' Group poetry",
     href: "poetry",
-    icon: CursorArrowRaysIcon,
+    icon: BookOpenIcon,
   },
   {
     name: "Flash Fiction",
     description: "Writers' Group Flash Fiction",
     href: "flash-fiction",
-    icon: FingerPrintIcon,
+    icon: BookOpenIcon,
   },
   {
     name: "Memoir/Non-Fiction",
     description: "Writers' Group memoirs and non-fiction",
     href: "memoir-non-fiction",
-    icon: SquaresPlusIcon,
+    icon: BookOpenIcon,
   },
   {
     name: "Novel Extracts",
     description: "Writers' Group novel extracts",
     href: "novel-extracts",
-    icon: ArrowPathIcon,
+    icon: BookOpenIcon,
   },
   {
     name: "Diary",
     description: "Writers' Group Diaries",
     href: "diary",
-    icon: ArrowPathIcon,
+    icon: BookOpenIcon,
   },
 ];
 
@@ -69,9 +69,9 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <header class="bg-white-50">
+  <header class="bg-white shadow sticky top-0 z-50">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between px-4 py-8 lg:px-8"
+      class="mx-auto flex max-w-5xl items-center justify-between px-4 py-8 lg:px-8"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
@@ -107,7 +107,7 @@ const mobileMenuOpen = ref(false);
         >
         <Popover class="relative">
           <PopoverButton
-            class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900"
+            class="flex items-center text-sm font-semibold leading-6 text-slate-900"
           >
             Categories
             <ChevronDownIcon
@@ -125,7 +125,7 @@ const mobileMenuOpen = ref(false);
             leave-to-class="opacity-0 translate-y-1"
           >
             <PopoverPanel
-              class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-900/5"
+              class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-900/5"
             >
               <div class="p-4">
                 <div
@@ -150,7 +150,6 @@ const mobileMenuOpen = ref(false);
                       {{ item.name }}
                       <span class="absolute inset-0" />
                     </a>
-                    <p class="mt-1 text-slate-600">{{ item.description }}</p>
                   </div>
                 </div>
               </div>
@@ -172,7 +171,7 @@ const mobileMenuOpen = ref(false);
     >
       <div class="fixed inset-0 z-10" />
       <DialogPanel
-        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10"
+        class="fixed inset-y-0 mt-10 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-slate-900/10"
       >
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">

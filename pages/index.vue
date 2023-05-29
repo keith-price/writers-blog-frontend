@@ -9,7 +9,6 @@
 const { fetchLatestPost, fetchFeaturedPosts } = useUtils();
 const latestData = fetchLatestPost();
 const featureData = fetchFeaturedPosts();
-console.log(featureData);
 </script>
 
 <template>
@@ -26,9 +25,8 @@ console.log(featureData);
               :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
               :alt="latestData.title"
               height="720"
-              width="1280"
               loading="lazy"
-              class="mb-2"
+              class="mb-2 rounded shadow-md"
             />
             <p class="text-sm mb-4 text-justify lg:text-base">
               {{ latestData.excerpt }}
@@ -59,7 +57,7 @@ console.log(featureData);
                   :src="$urlFor(post.coverImage).size(1280, 720).url()"
                   :alt="post.title"
                   loading="lazy"
-                  class="mb-2"
+                  class="mb-2 rounded shadow-md"
                 />
                 <p class="text-sm text-justify mb-2 lg:text-base">
                   {{ post.excerpt }}

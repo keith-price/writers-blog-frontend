@@ -21,6 +21,7 @@ const data = fetchByCategory("flash fiction");
             height="426"
             width="426"
             loading="lazy"
+            class="mb-2 rounded shadow-md"
           />
         </li>
       </ul>

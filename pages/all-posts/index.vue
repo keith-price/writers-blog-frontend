@@ -19,7 +19,7 @@ const posts = fetchAllPosts();
               :src="$urlFor(post.coverImage).size(1280, 720).url()"
               :alt="post.title"
               loading="lazy"
-              class="mb-2"
+              class="mb-2 rounded shadow-md"
             />
             <p class="text-sm text-justify mb-2 lg:text-base">
               {{ post.excerpt }}
