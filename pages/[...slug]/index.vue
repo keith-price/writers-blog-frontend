@@ -1,4 +1,6 @@
 <script setup>
+import BackArrow from "~/components/Icons/BackArrow.vue";
+
 const route = useRoute();
 const slug = route.params.slug;
 const query = groq`*[_type == "post" && slug.current == "${slug}"] [0]`;
@@ -8,8 +10,17 @@ const { data: singlePost } = await useSanityQuery(query);
 
 <template>
   <!-- button to navigate back to previous page -->
-  <button @click="$router.back()">BACK</button>
-  <p class="text-2xl font-bold mb-2">{{ singlePost.title }}</p>
+  <div
+    class="title-back-container flex justify-between align-middle mt-20 mb-4"
+  >
+    <p class="text-2xl font-bold">{{ singlePost.title }}</p>
+    <button
+      class="px-4 rounded-md text-white bg-slate-100 hover:bg-slate-200 transition-all"
+      @click="$router.back()"
+    >
+      <BackArrow class="text-2xl text-slate-900" />
+    </button>
+  </div>
   <img
     :src="$urlFor(singlePost.coverImage).size(1280, 720).url()"
     :alt="singlePost.title"

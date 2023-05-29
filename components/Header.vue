@@ -125,7 +125,7 @@ const mobileMenuOpen = ref(false);
             leave-to-class="opacity-0 translate-y-1"
           >
             <PopoverPanel
-              class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-900/5"
+              class="absolute -right-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-900/5"
             >
               <div class="p-4">
                 <div

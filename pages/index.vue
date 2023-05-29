@@ -13,44 +13,49 @@ const featureData = fetchFeaturedPosts();
 
 <template>
   <div>
-    <main class="text-slate-900 mb-12">
-      <ul v-if="latestData" class="my-8">
-        <li v-bind:key="latestData._id">
-          <h1 class="text-3xl font-bold mb-4">Latest Post</h1>
-          <!-- <p class="text-1xl font-bold">{{ latestData.title }}</p> -->
-          <!-- SanityContent brings in the content body -->
-          <!-- <SanityContent :blocks="latestData.content" /> -->
-          <NuxtLink :to="latestData.slug.current">
-            <img
-              :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
-              :alt="latestData.title"
-              height="720"
-              loading="lazy"
-              class="mb-2 rounded shadow-md"
-            />
-            <p class="text-sm mb-4 text-justify lg:text-base">
-              {{ latestData.excerpt }}
+    <main class="text-slate-900 mt-20 mb-20">
+      <section class="mb-20">
+        <ul v-if="latestData" class="my-8">
+          <li v-bind:key="latestData._id">
+            <h1 class="text-3xl font-bold mb-4">Latest Post</h1>
+            <!-- <p class="text-1xl font-bold">{{ latestData.title }}</p> -->
+            <!-- SanityContent brings in the content body -->
+            <!-- <SanityContent :blocks="latestData.content" /> -->
+            <NuxtLink :to="latestData.slug.current">
+              <img
+                :src="$urlFor(latestData.coverImage).size(1280, 720).url()"
+                :alt="latestData.title"
+                height="720"
+                loading="lazy"
+                class="mb-2 rounded shadow-md"
+              />
+              <p class="text-sm mb-4 text-justify lg:text-base">
+                {{ latestData.excerpt }}
+              </p>
+            </NuxtLink>
+            <p class="text-sm font-semibold lg:text-base">
+              {{ latestData.author }}
             </p>
-          </NuxtLink>
-          <p class="text-sm font-semibold lg:text-base">
-            {{ latestData.author }}
-          </p>
-          <p class="text-sm italic lg:text-base">
-            {{ `# ${latestData.category}` }}
-          </p>
-        </li>
-      </ul>
-
-      <p v-else>No Latest posts to show</p>
+            <p class="text-sm italic lg:text-base">
+              {{ `# ${latestData.category}` }}
+            </p>
+          </li>
+        </ul>
+        <p v-else>No Latest posts to show</p>
+      </section>
 
       <section>
-        <h2 class="text-2xl font-bold mb-4">Featured Posts</h2>
+        <h2 class="text-2xl font-bold mb-6">Featured Posts</h2>
         <div>
           <ul
             v-if="featureData?.length"
-            class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-8"
+            class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-12"
           >
-            <li v-for="post in featureData" v-bind:key="featureData._id">
+            <li
+              v-for="post in featureData"
+              v-bind:key="featureData._id"
+              class="transition-all hover:scale-105"
+            >
               <NuxtLink :to="post.slug.current">
                 <p class="text-1xl font-bold mb-2">{{ post.title }}</p>
                 <img
