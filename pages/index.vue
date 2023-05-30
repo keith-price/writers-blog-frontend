@@ -13,8 +13,8 @@ const featureData = fetchFeaturedPosts();
 
 <template>
   <div>
-    <main class="text-slate-900 mt-20 mb-20">
-      <section class="mb-20">
+    <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20">
+      <section class="mb-8 lg:mb-12">
         <ul v-if="latestData" class="my-8">
           <li v-bind:key="latestData._id">
             <h1 class="text-3xl font-bold mb-4">Latest Post</h1>
@@ -33,7 +33,7 @@ const featureData = fetchFeaturedPosts();
                 {{ latestData.excerpt }}
               </p>
             </NuxtLink>
-            <p class="text-sm font-semibold lg:text-base">
+            <p class="text-sm font-semibold lg:text-base text-slate-800">
               {{ latestData.author }}
             </p>
             <p class="text-sm italic lg:text-base">
@@ -43,21 +43,19 @@ const featureData = fetchFeaturedPosts();
         </ul>
         <p v-else>No Latest posts to show</p>
       </section>
-
-      <section>
-        <h2 class="text-2xl font-bold mb-6">Featured Posts</h2>
+      <hr class="bg-slate-300" />
+      <section class="mt-8 lg:mt-12">
+        <h2 class="text-3xl font-bold mb-4 lg:mb-6">Featured Posts</h2>
         <div>
           <ul
             v-if="featureData?.length"
             class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-12"
           >
-            <li
-              v-for="post in featureData"
-              v-bind:key="featureData._id"
-              class="transition-all hover:scale-105"
-            >
+            <li v-for="post in featureData" v-bind:key="featureData._id">
               <NuxtLink :to="post.slug.current">
-                <p class="text-1xl font-bold mb-2">{{ post.title }}</p>
+                <p class="text-1xl font-bold mb-2 text-slate-800">
+                  {{ post.title }}
+                </p>
                 <img
                   :src="$urlFor(post.coverImage).size(1280, 720).url()"
                   :alt="post.title"

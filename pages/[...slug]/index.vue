@@ -11,11 +11,11 @@ const { data: singlePost } = await useSanityQuery(query);
 <template>
   <!-- button to navigate back to previous page -->
   <div
-    class="title-back-container flex justify-between align-middle mt-20 mb-4"
+    class="title-back-container flex justify-between align-middle mt-5 mb-5 lg:mt-20"
   >
     <p class="text-2xl font-bold">{{ singlePost.title }}</p>
     <button
-      class="px-4 rounded-md text-white bg-slate-100 hover:bg-slate-200 transition-all"
+      class="px-4 h-8 rounded-md text-white bg-slate-100 hover:bg-slate-200 transition-all"
       @click="$router.back()"
     >
       <BackArrow class="text-2xl text-slate-900" />

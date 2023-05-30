@@ -1,13 +1,22 @@
 <script setup>
+import BackArrow from "~/components/Icons/BackArrow.vue";
+
 const { fetchAllPosts } = useUtils();
 const posts = fetchAllPosts();
 </script>
 
 <template>
   <div>
-    <main>
-      <h2>All Posts</h2>
-      <button @click="$router.back">Back</button>
+    <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20">
+      <div class="title-back-container flex justify-between align-middle mb-8">
+        <h1 class="text-3xl font-bold">All Posts</h1>
+        <button
+          class="px-4 align-middle rounded-md text-white bg-slate-100 hover:bg-slate-200 transition-all"
+          @click="$router.back()"
+        >
+          <BackArrow class="text-2xl text-slate-900" />
+        </button>
+      </div>
       <ul
         v-if="posts?.length"
         class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-8"
