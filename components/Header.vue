@@ -63,6 +63,12 @@ const categories = [
     href: "diary",
     icon: BookOpenIcon,
   },
+  {
+    name: "Style Guide",
+    description: "Writers' Style Guide",
+    href: "style-guide",
+    icon: BookOpenIcon,
+  },
 ];
 
 const mobileMenuOpen = ref(false);

@@ -9,7 +9,7 @@ const { data: singlePost } = await useSanityQuery(query);
 </script>
 
 <template>
-  <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20">
+  <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20" `>
     <!-- button to navigate back to previous page -->
     <div
       class="title-back-container flex justify-between align-middle mt-5 mb-5 lg:mt-20"
