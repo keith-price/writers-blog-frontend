@@ -9,7 +9,7 @@ const { data: singlePost } = await useSanityQuery(query);
 </script>
 
 <template>
-  <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20" `>
+  <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20">
     <!-- button to navigate back to previous page -->
     <div
       class="title-back-container flex justify-between align-middle mt-5 mb-5 lg:mt-20"
@@ -31,7 +31,7 @@ const { data: singlePost } = await useSanityQuery(query);
       class="mb-2 rounded shadow-md"
     />
     <SanityContent :blocks="singlePost.content" />
-    <p class="text-sm font-semibold text-justify lg:text-base">
+    <p class="text-sm font-semibold text-justify lg:text-base mt-4">
       {{ singlePost.author }}
     </p>
     <p class="text-sm text-justify italic lg:text-base">

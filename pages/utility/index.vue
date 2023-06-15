@@ -30,7 +30,7 @@ const data = fetchByCategory("utility");
               loading="lazy"
               class="mb-2 rounded shadow-md"
             />
-            <p class="text-sm text-justify mb-2 lg:text-base">
+            <p class="text-sm text-justify mb-4 lg:text-base">
               {{ post.excerpt }}
             </p>
           </NuxtLink>
