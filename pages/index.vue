@@ -38,7 +38,7 @@ console.log(latestData);
             {{ latestData.author }}
           </p>
           <p class="text-sm italic lg:text-base">
-            {{ `# ${latestData.category.title}` }}
+            {{ `# ${latestData.category}` }}
           </p>
         </li>
       </ul>
@@ -50,16 +50,18 @@ console.log(latestData);
         <div>
           <ul
             v-if="featureData?.length"
-            class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-8"
+            class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-12"
           >
             <li v-for="post in featureData" v-bind:key="featureData._id">
               <NuxtLink :to="post.slug.current">
-                <p class="text-1xl font-bold mb-2">{{ post.title }}</p>
+                <p class="text-1xl font-bold mb-2 text-slate-800">
+                  {{ post.title }}
+                </p>
                 <img
                   :src="$urlFor(post.coverImage).size(1280, 720).url()"
                   :alt="post.title"
                   loading="lazy"
-                  class="mb-2"
+                  class="mb-2 rounded shadow-md"
                 />
                 <p class="text-sm text-justify mb-2 lg:text-base">
                   {{ post.excerpt }}
@@ -69,7 +71,7 @@ console.log(latestData);
                 {{ post.author }}
               </p>
               <p class="text-sm text-justify italic lg:text-base">
-                {{ `# ${latestData.category}` }}
+                {{ `# ${post.category}` }}
               </p>
             </li>
           </ul>

@@ -1,15 +1,14 @@
 <script setup>
 import BackArrow from "~/components/Icons/BackArrow.vue";
-
-const { fetchAllPosts } = useUtils();
-const posts = fetchAllPosts();
+const { fetchByCategory } = useUtils();
+const data = fetchByCategory("flash fiction");
 </script>
 
 <template>
   <div>
     <main class="text-slate-900 mt-5 mb-20 lg:mt-20 lg:mb-20">
       <div class="title-back-container flex justify-between align-middle mb-8">
-        <h1 class="text-3xl font-bold">All Posts</h1>
+        <h1 class="text-3xl font-bold">Flash Fiction</h1>
         <button
           class="px-4 align-middle rounded-md text-white bg-slate-100 hover:bg-slate-200 transition-all"
           @click="$router.back()"
@@ -18,10 +17,10 @@ const posts = fetchAllPosts();
         </button>
       </div>
       <ul
-        v-if="posts?.length"
+        v-if="data?.length"
         class="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-8"
       >
-        <li v-for="post in posts" v-bind:key="post._id">
+        <li v-for="post in data" v-bind:key="post._id">
           <NuxtLink :to="post.slug.current">
             <p class="text-1xl font-bold mb-2">{{ post.title }}</p>
             <img
@@ -43,7 +42,7 @@ const posts = fetchAllPosts();
         </li>
       </ul>
 
-      <p v-else>No Posts to show</p>
+      <p v-else>No Flash Fiction to show</p>
     </main>
   </div>
 </template>

@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 /* styles here are to deal with sanity content. */
-h2 {
-  font-weight: bold;
-  font-size: 16px;
-  margin: 16px 0 8px 0;
-}
 
+body {
+  color: rgb(15 23 42);
+}
 p {
   text-align: justify;
 }
@@ -17,3 +15,77 @@ p:empty {
   display: block;
   height: 1.5em;
 }
+
+h1 {
+  font-weight: bold;
+  font-size: 72px;
+  /* margin: 16px 0 8px 0; */
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 60px;
+  /* margin: 16px 0 8px 0; */
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 48px;
+  /* margin: 16px 0 8px 0; */
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 36px;
+  /* margin: 16px 0 8px 0; */
+}
+
+h5 {
+  font-weight: bold;
+  font-size: 30px;
+  /* margin: 16px 0 8px 0; */
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 24px;
+  /* margin: 16px 0 8px 0; */
+}
+
+blockquote {
+  font-size: 1.4em;
+  width: 60%;
+  /* margin: 50px auto; */
+  font-family: Open Sans;
+  font-style: italic;
+  color: rgb(15 23 42);
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid rgb(15 23 42);
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: rgb(15 23 42);
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: "";
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: arabic;
+}
+
+todo: need to add breakpoints for smaller screen sizes;
